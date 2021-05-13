@@ -1,0 +1,45 @@
+body{
+    background-image: url("/static/images/bg.bea347ab.png");
+}
+form{
+    width: 506px;
+    height: 472px;
+    margin-top: 12%;
+    margin-left: 65%;
+    background-image: url("/static/images/denglu-bg.33a80b40.png");
+    text-align: center;
+    color: dodgerblue;
+}
+h3{
+    font-size: 1.5em;
+    padding-top: 60px;
+}
+.el-form-item__content{
+    margin: 50px auto;
+    width: 70%;
+    height: 40px;
+    border: 1px solid dodgerblue;
+    line-height: 40px;
+}
+input{
+    height: 100%;
+    width: 70%;
+    background-color: #00000000;
+    border: 0;
+    color: aliceblue;
+}
+#username-error,#password-error{
+    color: red;
+    font-size: 0.7em;
+    margin: fill;
+}
+.input-img{
+    margin: 20px;
+    text-align: center;
+
+}
+
+
+
+
+

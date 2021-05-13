@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/firstPage.css">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src = '/static/js/projectList.js'></script>
+</head>
+<body>
+<div class="conent-text" style="width: 100%;" >
+        <div class="projectList" style="margin: 15px">
+        <p>项目列表</p>
+            <div class="projectList-seek">
+                <input type="text" placeholder="名称" class="project-name">
+                <input type="button" id = 'inquire-button' class="button" value="查询">
+                <input type="button" id = 'add-project' class="button" value="新增">
+            </div>
+            <div>
+                <table class="table-header">
+                    <tr>
+                        <th class="project-number">
+                            <input type="checkbox" aria-hidden="false" class="el-checkbox__original" value="">
+                        </th>
+                        <th class="project-name">项目名称</th>
+                        <th class="project-version">项目版本</th>
+                        <th class="project-type">类型</th>
+                        <th class="project-change-date">最后修改时间</th>
+                        <th class="project-state">状态</th>
+                        <th class="project-operation">操作</th>
+                    </tr>
+                </table>
+                {% for project in projects %}
+                <table class="table-content">
+                    <tr>
+                        <td class="project-number">
+                            <input type="checkbox" aria-hidden="false" class="el-checkbox__original" value="">
+                        </td>
+                        <td class="project-name"><a href="http://www.baidu.com "  style="color: black">{{ project.projectName }}</a></td>
+                        <td class="project-version">{{ project.versionNumber }}</td>
+                        <td class="project-type">{{ project.projectType }}</td>
+                        <td class="project-change-date">{{ project.update_time | date:'Y-m-d H:i' }}</td>
+                        <td class="project-state">{{ project.state }}</td>
+                        <td class="project-operation">
+                            <input style="background: #ffffff" type="button" class="table-button" value="编辑">
+                            <input style="background: #ff4949;color: #ffffff" type="button" class="table-button" value="删除">
+                            <input style="background: #50BFFF;color: #ffffff" type="button" class="table-button" value="禁用">
+                        </td>
+                    </tr>
+                </table>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+<div>
+    <dialog open style="display: none;margin: auto;">
+        {% csrf_token %}
+        <form method="post">
+            <div>
+            <span>项目名称:</span>
+            <input type="text" name = 'projectName' style="width: 79%" placeholder="请输入项目名称"></div>
+            <div>
+                <span style="width: 80px">类型:</span>
+                <select name = 'projectType'style="margin-right: 10px;height: 30px;width:83px;border: 1px  solid #C1CDDA; border-radius: 5px">
+                    <option value="App">App</option>
+                    <option value="Web">Web</option>
+                </select>
+                <span>版本号:</span>
+                <input style="width: 40%" name = 'projectVersion' type="text"  placeholder="请输入版本号">
+            </div>
+            <div>
+                <span style="margin-right: 4px">描述:</span>
+                <textarea name = 'projectDescribe' rows="10" cols="50" style="width: 80%;float: right;border: 1px  solid #C1CDDA; border-radius: 5px"></textarea>
+            </div>
+            <div style="clear: both">
+                <input type="button" id = 'dialog-cancel-button' style="border: 1px  solid #C1CDDA; border-radius: 5px;background: white;color: black" class="button" value="取消">
+                <input type="button" id = 'dialog-confirm-button' style="border: 1px  solid #C1CDDA; border-radius: 5px;" class="button" value="提交" formenctype="multipart/form-data">
+            </div>
+        </form>
+    </dialog>
+</div>
+</body>
+</html>

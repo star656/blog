@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>项目</title>
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src = '/static/js/projec.js'></script>
+</head>
+<body>
+<div>
+    <form>
+        <span>
+            <label for="request-choice">
+                <select id = 'request-choice' name="request">
+                    <option value="GET">GET</option>
+                    <option value="POST">POST</option></select></label></span>
+        <span>
+            <label for="request-url">
+                <input id = 'request-url' name="url" type="text" placeholder="请输入请求地址"></label> </span>
+        <span>
+            <input type="button" id="button" value="发送"></span>
+        <span><input type="button" id ="clear" value="清除"></span>
+    </form>
+</div>
+<div>
+    <p id="content"></p>
+</div>
+
+</body>
+</html>

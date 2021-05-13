@@ -1,0 +1,63 @@
+* {margin: 0;padding: 0}
+
+div.navtion{width: 15%; float: left}
+
+div.navtion-header{height: 60px}
+
+h3{background:#20A0FF;color:white;text-align:center;line-height: 60px}
+
+div.navtion-content{width: 15%;height: 100%;background: #EEF1F6;overflow: auto;position: absolute}
+
+li{text-align: center;line-height: 50px;list-style-type: none}
+
+a{text-decoration:none;}
+
+a:visited{color: #20A0FF}
+
+#iframe-a{margin-left: 15%;width: 85%;height: 900px;border: 0}
+
+div.conent{width: 85%;float: left;margin-left: 15%}
+
+img{margin-top: 15px;margin-left: 15px}
+
+div.projectList div{margin-top: 15px}
+
+div.projectList-seek{width:auto;padding: 10px;margin: 10px 0;background: #F2F2F2}
+
+div.projectList-seek input{line-height: 33px;border: 1px  solid #C1CDDA; border-radius: 5px;}
+
+input.project-name{padding-left: 10px;width: 249px}
+
+input.button{padding:0 15px;line-height: 35px;margin-left: 10px;background: #20A0FF;color: white;cursor: pointer}
+
+table{width: 100%;text-align: left;padding-left:15px;line-height: 40px;border: 1px solid #DFE6EC;font-size: 0.9em}
+
+table.table-header{background: #EEF1F6}
+
+table.table-content{border-top: 0}
+
+.el-checkbox__original{}
+
+.project-name{width: 27%}
+
+.project-version{width: 10%}
+
+.project-type{width: 10%}
+
+.project-change-date{width: 25%}
+
+.project-state{width: 10%}
+
+.project-operation{width: 15%}
+
+td.project-operation .table-button{padding: 4px 6px;margin-right: 5px;border-radius: 5px;cursor: pointer;border: 1px solid #C4C4C4}
+
+dialog{padding: 15px 25px;}
+
+dialog form div{padding-top:15px;text-align: right;width: 100%}
+
+dialog form div span{padding-right: 4px;}
+
+dialog form div input{line-height: 30px;border: 1px  solid #C1CDDA; border-radius: 5px;padding-left: 5px}
+
+

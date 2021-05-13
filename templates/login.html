@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>接口测试平台</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/login.css">
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src = '/static/js/checklogin.js'></script>
+</head>
+<body>
+    <form id="login"  method="post" >
+        {% csrf_token %}
+        <h3>用户登录</h3>
+        <div class="el-form-item__content">
+            <span class="input-img">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAYCAYAAAD+vg1LAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAdlJREFUeNqs1T1IW1EYxvEbTRqUYK3o0IofQ4eKdHBycfAjVItR0aGadBMU3Dq1DqKIBEEQRREVFJdWXBRFBEVFSVEnUcRidRFFW2hp0aFE+oH9H3gDh5Dk3mhe+HEuR/Pk5r3nnGtzzl0aJlWKNtTBiRvMYgQ70T6UFCMwGYvYwCv8xD6u8Brb+HCX4D14MIEcPEERHiMPU/BhIZ7gYTxHN1pwEfb3czSjF7V4Gx5gi9DjXJyJfMO81Jdm45G0Keode2T0G9ZqVMYXZq14KuNHi8GHMhaaBf+RMdWIr5xmwZ9krLEYWCzjidnDy8I3XCPdQvAPZMhy/Brrjr+jEw8xbRI6I6F9emisddyDeXixBLfWcxcqsYxGBPDOyjrWaxytcv1bNobadQ6ZG5NzxPLOUz+vHeXa3ANZig5tTn1JdaQAe4S5eumdCrrFJOZwjCBS8AwNsq1f4gBNOIrWijcYkOsODOJXjFa55P9CPa7CSniwV1sFZdiMY3NUYE2uC/A51OM0LbQkzlBV69rzCOgP772M6vjbMu5W6oXQJRusX7UiUzbFFzn+7lv/1A0naWeC30hMDYVa4ZOJ1QQFz4aC3TJxmqBg9UYJ2uV0suFvgoLV23z3vwADAPGCYage0xRZAAAAAElFTkSuQmCC" alt="暂时无法加载"></span>
+            <span>
+                <input id = 'username' name = 'username' type="text" placeholder="请输入账号" required = "required" ></span>
+            <div>
+                <p id="username-error" style="display: none">账号不能为空</p></div>
+        </div>
+        <div class="el-form-item__content">
+            <span class="input-img">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAaCAYAAAC3g3x9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAX5JREFUeNrklU8rRFEYxs81Z0xCksFOWWBBWVmwZz6AhWyVBRt/FnwCJSUL5WMoUTasjMWwUSxoYiMWUqZoZJjL89YzdTrOZe4cO0/9es+5f577nvfcc06Q2r5TEeoHY2AU9IJWcAsOwCHYd70URBjOgw31s07BFLgwL2rHg3OW2RHYAy+gD0yATjAEzpj9TVSG8sIl2xKnQdb6YANYAQvsP4Au8CadOuvhdcYrMOgwE72CRbDJfgdYdWXYBh7ZlmHk1e86BwPgnWV4MjMcYTyp0kw0w5gEGXvIw4zHqnplmeUzyNmz3M5YUvEktW4BBTvDFGMipuFnxcw2LDJ+KA9pLrHJSlGhcS6zhJGBEBptG8X7eTHcBd3GR3pIzRk2sS1La4dD1zHqF3JiZCkWtVG7ZbDlUT5JqFEmJeCFe+Wnb79Ns6ehdm0O3vrnhmVPr9A2LHgaJu3ta4l/fqkGM9m103KuyBEgh0v9X9VQMlwDs0xZGysnjsqs4fWXAAMA0ItVwWaRh4IAAAAASUVORK5CYII=" alt="暂时无法加载"></span>
+            <span>
+                <input id = 'password' name = 'password' type="password" placeholder="请输入密码" required = "required" ></span>
+            <div>
+                <p id="password-error" style="display: none">密码不能为空</p></div>
+        </div>
+        <input style="height: 40px;cursor: pointer;background-color: dodgerblue" type="submit" id="button" value="登录"  formenctype="multipart/form-data">
+    </form>
+
+</body>
+</html>
