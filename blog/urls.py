@@ -25,5 +25,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('',views.loginpage,name="loginpage"),
     path('blog/',include('blog_app.urls')),
-    path("favicon.ico", RedirectView.as_view(url='static/favicon.ico')),
+    path("favicon.png", RedirectView.as_view(url='static/favicon.png')),
 ]

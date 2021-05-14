@@ -1,14 +1,23 @@
 $(function (){
-    $("#add-project").click(function (){
 
+    //点击查询
+    $("#inquire-button").click(function (){
+        inquireProjectName = $('[name="inquireProjectName"]').val();
+        $.get('/blog/projectList/',{'inquireProjectName':inquireProjectName})
+    });
+
+    // 点击新增展示弹窗
+    $("#add-project").click(function (){
         $('dialog').show();
     });
 
+    //点击取消隐藏弹窗
     $("#dialog-cancel-button").click(function (){
         console.log("111")
         $('dialog').hide();
     });
 
+    //点击提交，提交数据
     $("#dialog-confirm-button").click(function (){
         // projectName = $('[name="projectName"]').val();
         // projectType = $('[name="projectType"]').val();

@@ -44,8 +44,12 @@ def project(request):
 
 
 def projectList(request):
+    inquireProjectName = request.GET.get('inquireProjectName')
     projects = Project.objects.all().order_by('-update_time')
     return render(request, 'projectList.html', context={'projects': projects})
+    # if len(inquireProjectName) != 0:
+    #     projects = Project.objects.filter(projectName=inquireProjectName)
+    #     return render(request, 'projectList.html', context={'projects': projects})
 
 
 def addProject(request):
@@ -58,7 +62,7 @@ def addProject(request):
         # print('保存成功')
         models.Project.objects.create(projectName=projectName,projectType=projectType,
                                       versionNumber=projectVersion,describe=projectDescribe,state=0)
-    return JsonResponse({'code':1,'message':'添加成功'})
+        return JsonResponse({'code':1,'message':'添加成功'})
 
 
 def firstPage(request):
