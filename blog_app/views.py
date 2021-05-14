@@ -23,13 +23,13 @@ def login(request):
             users = User.objects.all()
             for user in users:
                 if username == user.username and password == user.password:
-                    return redirect('/blog/firstPage')
+                    return redirect('/blog/firstPage/')
             return JsonResponse({'code':0,'message':'账号或密码错误'})
     else:
         return render(request, 'login.html')
 
 def loginpage(request):
-    return redirect('/blog/login')
+    return redirect('/blog/login/')
 
 
 def project(request):
@@ -58,7 +58,7 @@ def addProject(request):
         # print('保存成功')
         models.Project.objects.create(projectName=projectName,projectType=projectType,
                                       versionNumber=projectVersion,describe=projectDescribe,state=0)
-        return JsonResponse({'code':1,'message':'添加成功'})
+    return JsonResponse({'code':1,'message':'添加成功'})
 
 
 def firstPage(request):
