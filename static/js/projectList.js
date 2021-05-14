@@ -3,8 +3,19 @@ $(function (){
     //点击查询
     $("#inquire-button").click(function (){
         inquireProjectName = $('[name="inquireProjectName"]').val();
-        $.get('/blog/projectList/',{'inquireProjectName':inquireProjectName})
+        $.ajax({
+            url:'/blog/projectList/',
+            type:'post',
+            dataType:'json',
+			data: {'inquireProjectName':inquireProjectName},
+            async:false,
+            success: function(data) {
+                // data = jQuery.parseJSON(data);  //dataType指明了返回数据为json类型，故不需要再反序列化
+                alert(data.message);
+            }
+        });
     });
+
 
     // 点击新增展示弹窗
     $("#add-project").click(function (){
@@ -19,16 +30,6 @@ $(function (){
 
     //点击提交，提交数据
     $("#dialog-confirm-button").click(function (){
-        // projectName = $('[name="projectName"]').val();
-        // projectType = $('[name="projectType"]').val();
-        // projectVersion = $('[name="projectVersion"]').val();
-        // projectDescribe = $('[name="projectDescribe"]').val();
-        // csrf = $('[type="hidden"]').val();
-
-        // $.post('/blog/addProject/', $("form").serialize(), function (response) {
-        //            console.log(response);
-        //            $('dialog').hide();
-        //         });
         $.ajax({
             url:'/blog/addProject/',
             type:'post',

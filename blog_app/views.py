@@ -44,12 +44,18 @@ def project(request):
 
 
 def projectList(request):
-    inquireProjectName = request.GET.get('inquireProjectName')
-    projects = Project.objects.all().order_by('-update_time')
-    return render(request, 'projectList.html', context={'projects': projects})
-    # if len(inquireProjectName) != 0:
-    #     projects = Project.objects.filter(projectName=inquireProjectName)
-    #     return render(request, 'projectList.html', context={'projects': projects})
+    if request.method == "GET":
+        projects = Project.objects.all().order_by('-update_time')
+        return render(request, 'projectList.html', context={'projects': projects})
+    else:
+        inquireProjectName = request.POST.get('inquireProjectName')
+        print(inquireProjectName)
+        if len(inquireProjectName) != 0:
+            projects = Project.objects.filter(projectName=inquireProjectName)
+            return render(request, 'projectList.html', context={'projects': projects})
+        else:
+            projects = Project.objects.all().order_by('-update_time')
+            return render(request, 'projectList.html', context={'projects': projects})
 
 
 def addProject(request):
@@ -75,3 +81,13 @@ def monkeyTest(request):
 
 def ourInfo(request):
     return HttpResponse('关于我们')
+
+
+def getProjectList(request):
+    inquireProjectName = request.GET.get('inquireProjectName')
+    if len(inquireProjectName) == 0:
+        projects = Project.objects.all().order_by('-update_time')
+        return render(request, 'projectList.html', context={'projects': projects})
+    else:
+        projects = Project.objects.filter(projectName=inquireProjectName)
+        return render(request, 'projectList.html', context={'projects': projects})

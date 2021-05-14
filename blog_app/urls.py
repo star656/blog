@@ -10,5 +10,6 @@ urlpatterns = [
     path('addProject/',views.addProject,name="addProject"),
     path('firstPage/',views.firstPage,name='firstPage'),
     path('monkeyTest/',views.monkeyTest,name='monkeyTest'),
-    path('ourInfo/',views.ourInfo,name='ourInfo')
+    path('ourInfo/',views.ourInfo,name='ourInfo'),
+    path('getProjectList/',views.getProjectList,name='getProjectName')
 ]
